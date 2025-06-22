@@ -10,7 +10,7 @@ const PORT = process.env.PORT || 5000;
 const app = express();
 
 app.get("/",(req,res)=> {
-    res.send("hello this is the landing the page");
+    res.send("This is the Express server");
 });
 
 
