@@ -1,6 +1,5 @@
 const mongoose = require("mongoose");
 const DB_URL = process.env.DB_URL;
-
 const Schema = mongoose.Schema;
 const ObjectId = mongoose.Types.ObjectId;
 
@@ -45,7 +44,6 @@ const userModel = mongoose.model("user",userSchema);
 const adminModel = mongoose.model("admin",adminSchema);
 const courseModel = mongoose.model("course",courseSchema);
 const purchaseModel = mongoose.model("purchase",purchaseSchema);
-
 
 module.exports = {
     userModel,

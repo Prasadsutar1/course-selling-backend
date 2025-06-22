@@ -3,16 +3,13 @@ const mongoose = require("mongoose");
 const { UserRouter } = require("./routes/user");
 const { courseRouter } = require("./routes/course");
 const {adminRouter} = require("./routes/admin");
-
 require("dotenv").config();
-
 const PORT = process.env.PORT || 5000;
 const app = express();
 
 app.get("/",(req,res)=> {
     res.send("This is the Express server");
 });
-
 
 app.use(express.json());
 app.use("/api/v1/user",UserRouter);

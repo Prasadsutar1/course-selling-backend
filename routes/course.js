@@ -2,6 +2,7 @@ const {Router} = require("express");
 const courseRouter = Router();
 const { userMiddleware } = require("../middleware/usermiddleware");
 const {purchaseModel, courseModel } = require("../db");
+
 courseRouter.get("/", function(req,res)  {
     res.json({
         message : "Courses",
@@ -31,8 +32,6 @@ courseRouter.get("/preview", async function(req,res)  {
         courses,
     })
 })
-
-
 
 module.exports = {
     courseRouter : courseRouter,

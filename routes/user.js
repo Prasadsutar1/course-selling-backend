@@ -51,7 +51,7 @@ UserRouter.post("/signup", async function (req,res)  {
     
     });
     
-    UserRouter.post("/signin",async function(req,res) {
+UserRouter.post("/signin",async function(req,res) {
         const email = req.body.email;
         const password = req.body.password;
 
@@ -83,10 +83,9 @@ UserRouter.post("/signup", async function (req,res)  {
             message : "signin failed",
         })
         return;
-    });
+    });    
 
-
-    UserRouter.get("/purchases",userMiddleware, async function (req,res) {
+UserRouter.get("/purchases",userMiddleware, async function (req,res) {
         const userId = req.userId;
         const purchases = await purchaseModel.find({userId});
         const courseData = await courseModel.find({id : purchases.map(x => x.courseId)});
@@ -95,10 +94,8 @@ UserRouter.post("/signup", async function (req,res)  {
             purchases,
             courseData,
         })
-    })
+    })    
     
-
-
 module.exports = {
     UserRouter :UserRouter,
 }
